@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Febri's Room</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="portofolio.css">
+</head>
+
+<body>
+  
+  <main class="container">
+    <div class="content-wrapper">
+      
+      <section class="intro">
+        <h1>Hi, I'm Febri👋</h1>
+        
+        <p>A Passionate Front-End Developer who loves Gojo Satoru.</p>
+      </section>
+
+      <nav>
+        <a href="#" class="nav-link" data-section="about">About</a>
+        <a href="#" class="nav-link" data-section="projects">Projects</a>
+        <a href="#" class="nav-link" data-section="contact">Contact</a>
+      </nav>
+
+      <div id="content">
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <div>
+            <h3>Febriana</h3>
+            <p>Frontend Developer Enthusiast </p>
+        </div>
+        <ul class="social-icons">
+            <li><a href="https://github.com/frxeve" target="_blank">
+              <i class="fa-brands fa-github"></i></a>
+            </li>
+            <li><a href="https://www.linkedin.com/in/febrianaa/" target="_blank">
+              <i class="fa-brands fa-linkedin"></i></a>
+            </li>
+            <li><a href="mailto:febrianaa2722@gmail.com">
+              <i class="fa-regular fa-envelope"></i></a>
+            </li>
+            <li><a href="https://drive.google.com/file/d/1-XvTUZtUTX1NnTAs8er_-JknRPAJXh2W/view?usp=sharing">
+              <i class="fa-solid fa-book"></i></a>
+            </li>
+        </ul>
+        <div >
+          &copy; 2024 Febri's Room. All Rights Reserved.
+      </div>
+    </div>
+    
+    </footer>
+  </main>
+  <script>
+    // Array of texts to type
+const texts = ["Febriana"];
+let textIndex = 0;
+let charIndex = 0;
+
+const typingElement = document.querySelector('.typing-text');
+
+// Function to type text
+function typeText() {
+    if (charIndex < texts[textIndex].length) {
+        typingElement.textContent += texts[textIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(typeText, 100); // Adjust speed of typing
+    } else {
+        // After finishing one text, move to the next one after a short delay
+        setTimeout(() => {
+            typingElement.textContent = ''; // Clear text
+            charIndex = 0;
+            textIndex = (textIndex + 1) % texts.length; // Cycle through texts
+            typeText(); // Start typing next text
+        }, 1500); // Wait before starting to type next text
+    }
+}
+
+// Start typing when the page loads
+window.onload = typeText;
+
+  </script>
+  <script src="portofolio.js"></script>
+</body>
+
+</html>
